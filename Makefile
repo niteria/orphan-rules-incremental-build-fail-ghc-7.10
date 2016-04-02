@@ -1,5 +1,7 @@
 HC      = ghc
-HC_OPTS = -O2 -Wall $(EXTRA_HC_OPTS)
+# aeson-0.9.0.1 is the last version that has `(.=)` function.
+# It's a typeclass method after that.
+HC_OPTS = -O2 -Wall -package aeson-0.9.0.1 $(EXTRA_HC_OPTS)
 
 SRCS = Types.hs JoinPoint.hs SomethingInBetween.hs Main.hs Types2.hs SomethingInBetween2.hs
 OBJS = Types.o JoinPoint.o SomethingInBetween.o Main.o Types2.o SomethingInBetween2.o
@@ -9,7 +11,7 @@ HIS = Types.hi JoinPoint.hi SomethingInBetween.hi Main.hi Types2.hi SomethingInB
 
 cool_pgm : $(OBJS)
 	rm -f $@
-	$(HC) -package aeson -o $@ $(HC_OPTS) $(OBJS)
+	$(HC) -o $@ $(HC_OPTS) $(OBJS)
 
 # Standard suffix rules
 .o.hi:
