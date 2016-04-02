@@ -1,0 +1,28 @@
+rm Types.o JoinPoint.o SomethingInBetween.o Main.o Types2.o SomethingInBetween2.o
+rm: cannot remove `JoinPoint.o': No such file or directory
+rm: cannot remove `SomethingInBetween.o': No such file or directory
+rm: cannot remove `Main.o': No such file or directory
+make: *** [clean] Error 1
+ghc -M -dep-suffix '' -O2 -Wall -package aeson-0.9.0.1  Types.hs JoinPoint.hs SomethingInBetween.hs Main.hs Types2.hs SomethingInBetween2.hs
+ghc -c Types.hs -O2 -Wall -package aeson-0.9.0.1 
+ghc -c Types2.hs -O2 -Wall -package aeson-0.9.0.1 
+ghc -c SomethingInBetween2.hs -O2 -Wall -package aeson-0.9.0.1 
+ghc -c SomethingInBetween.hs -O2 -Wall -package aeson-0.9.0.1 
+ghc -c JoinPoint.hs -O2 -Wall -package aeson-0.9.0.1 
+ghc -c Main.hs -O2 -Wall -package aeson-0.9.0.1 
+rm -f cool_pgm
+ghc -o cool_pgm -O2 -Wall -package aeson-0.9.0.1  Types.o JoinPoint.o SomethingInBetween.o Main.o Types2.o SomethingInBetween2.o
+                 U Types_zdfToJSONXzuzdszize_info
+0000000000000100 T Types_zdfToJSONXzuzdszize_info
+ghc -M -dep-suffix '' -O2 -Wall -package aeson-0.9.0.1  Types.hs JoinPoint.hs SomethingInBetween.hs Main.hs Types2.hs SomethingInBetween2.hs
+ghc -c Types.hs -O2 -Wall -package aeson-0.9.0.1 
+ghc -c SomethingInBetween.hs -O2 -Wall -package aeson-0.9.0.1 
+ghc -c JoinPoint.hs -O2 -Wall -package aeson-0.9.0.1 
+compilation IS NOT required
+rm -f cool_pgm
+ghc -o cool_pgm -O2 -Wall -package aeson-0.9.0.1  Types.o JoinPoint.o SomethingInBetween.o Main.o Types2.o SomethingInBetween2.o
+JoinPoint.o: In function `s9hP_info':
+(.text+0x124): undefined reference to `Types_zdfToJSONXzuzdszize_info'
+collect2: ld returned 1 exit status
+make: *** [cool_pgm] Error 1
+                 U Types_zdfToJSONXzuzdszize_info
