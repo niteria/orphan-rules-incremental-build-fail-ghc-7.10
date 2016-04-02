@@ -1,0 +1,10 @@
+cp Types.before.hs Types.hs; 
+make clean; 
+make depend; 
+make; 
+nm *.o | grep zdfToJSONXzuzdszize_info; 
+# rebuild
+cp Types.after.hs Types.hs; 
+make depend; 
+make; 
+nm *.o | grep zdfToJSONXzuzdszize_info

@@ -1,0 +1,4 @@
+Makefile.bak
+*.o
+*.hi
+Types.hs
